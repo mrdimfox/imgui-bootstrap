@@ -1,7 +1,7 @@
 ifeq ($(OS),Windows_NT)
-	PRESET=windows
+	CMAKE_PRESET=windows
 else
-	RM=linux
+	CMAKE_PRESET=linux
 endif
 
 ifeq ("$(wildcard vcpkg)", "")
@@ -18,7 +18,7 @@ vcpkg-init:
 init: vcpkg-init configure
 
 configure:
-	cmake --preset=$(PRESET) .
+	cmake --preset=$(CMAKE_PRESET) .
 
 build:
 	cmake --build build
