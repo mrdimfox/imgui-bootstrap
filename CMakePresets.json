@@ -8,8 +8,8 @@
     "configurePresets": [
       {
         "name": "windows",
-        "displayName": "Default Config",
-        "description": "Default build using vcpkg",
+        "displayName": "Windows Config",
+        "description": "Windows build using vcpkg",
         "generator": "Visual Studio 15 2017",
         "binaryDir": "${sourceDir}/build",
         "cacheVariables": {
