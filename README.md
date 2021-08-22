@@ -26,15 +26,37 @@ All of them are fetched by `vcpkg`. Only `ImGUI` is fetched from [GitHub
 repo](https://github.com/ocornut/imgui) with `FetchContent` tool. See
 `deps/imgui.cmake`.
 
+For Windows "Visual Studio 15 2017" is used. For Linux GCC with C++17 support
+is used. The compiler must be installed on your system before the configuring.
+Ninja is required for the Linux build too.
+
+If you want to build a release version change `CMAKE_BUILD_TYPE` in
+`CMakePresets.json` file.
+
+### "make" way
+
+If you have `make` installed use this command to configure and build
+everything:
+
+```bash
+make all
+```
+
+or separately:
+
+```bash
+make init
+make configure
+make build
+```
+
+### By hand
+
 Go to the root folder and clone `vcpkg`.
 
 ```bash
 git clone https://github.com/microsoft/vcpkg.git
 ```
-
-For Windows "Visual Studio 15 2017" is used. For Linux GCC with C++17 support
-is used. The compiler must be installed on your system before the configuring.
-Ninja is required for the Linux build too.
 
 Then configure CMake with a preset accoring to your OS.
 
@@ -50,7 +72,10 @@ Build the executable:
 cmake --build build
 ```
 
-The executable will be somewhere in `build` folder.
+## Run
+
+After the building, the executable should appear somewhere in `build` folder.
+On Windows it should be in `Debug` subfolder.
 
 ## Debug
 
