@@ -42,6 +42,13 @@ build all.
 cmake -P build_all.cmake
 ```
 
+or separately
+
+```bash
+cmake -D CONFIGURE=YES -P build_all.cmake
+cmake -D BUILD=YES -P build_all.cmake
+```
+
 ### By hand
 
 Go to the root folder and clone `vcpkg`.

@@ -1,5 +1,11 @@
 message(STATUS "Starting to build everything on ${CMAKE_HOST_SYSTEM_NAME}")
 
+if (CONFIGURE OR BUILD)
+    set(ALL NO)
+else()
+    set(ALL YES)
+endif()
+
 # Define CMake preset
 if(CMAKE_HOST_SYSTEM_NAME STREQUAL "Windows")
     set(CMAKE_PRESET "windows")
@@ -18,7 +24,11 @@ else()
 endif()
 
 # Configure
-execute_process(COMMAND cmake --preset=${CMAKE_PRESET} .)
+if (CONFIGURE OR ALL)
+    execute_process(COMMAND cmake --preset=${CMAKE_PRESET} .)
+endif()
 
 # Build
-execute_process(COMMAND cmake --build build)
+if (BUILD OR ALL)
+    execute_process(COMMAND cmake --build build)
+endif()
