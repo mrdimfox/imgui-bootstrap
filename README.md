@@ -33,21 +33,13 @@ Ninja is required for the Linux build too.
 If you want to build a release version change `CMAKE_BUILD_TYPE` in
 `CMakePresets.json` file.
 
-### "make" way
+### Fast way
 
-If you have `make` installed use this command to configure and build
-everything:
-
-```bash
-make all
-```
-
-or separately:
+You have just to run a preconfigured CMake script to init vcpkg, configure and
+build all.
 
 ```bash
-make init
-make configure
-make build
+cmake -P build_all.cmake
 ```
 
 ### By hand
