@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.20)
 
+# Enable compile commands for IntelliSense support
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+
 project(dear_imgui)
 
 include(deps/imgui.cmake)
@@ -22,6 +26,7 @@ set(AVALIABLE_COMPILERS "Clang" "GNU")
 if(CMAKE_CXX_COMPILER_ID IN_LIST AVALIABLE_COMPILERS)
   set(WARN_FLAGS -Wall -Wextra -Werror)
   target_compile_options(${PROJECT_NAME} PRIVATE ${WARN_FLAGS})
+
   message(
     STATUS
       "Warnings \"${WARN_FLAGS}\" was enabled for compiler ${CMAKE_CXX_COMPILER_ID}"
