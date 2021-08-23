@@ -195,6 +195,15 @@ with section("parse"):
                 "JOIN": 3,
             }
         },
+        "fetchcontent_declare": {
+            "pargs": "1",
+            "kwargs": {
+                "GIT_REPOSITORY": 1,
+                "GIT_TAG": 1,
+                "CONFIGURE_COMMAND": 1,
+                "BUILD_COMMAND": 1,
+            }
+        }
     }
 
     vartags = [
