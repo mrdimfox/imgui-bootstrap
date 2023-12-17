@@ -83,7 +83,7 @@ inline static auto create_window(std::string_view glsl_version)
     return window;
 }
 
-inline static void render(GLFWwindow* window, ImVec4 clear_color)
+inline static void render(GLFWwindow* window, const ImVec4& clear_color)
 {
     ImGui::Render();
     int display_w, display_h;
@@ -98,7 +98,7 @@ inline static void render(GLFWwindow* window, ImVec4 clear_color)
 }
 
 inline static void loop(GLFWwindow* window,
-                        ImVec4 clear_color,
+                        const ImVec4& clear_color,
                         std::function<void(void)> routine)
 {
     // Main loop
