@@ -22,7 +22,7 @@ include(FetchContent)
 fetchcontent_declare(
     imgui
     GIT_REPOSITORY https://github.com/ocornut/imgui.git
-    GIT_TAG v1.84.1
+    GIT_TAG v1.90
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
 )
