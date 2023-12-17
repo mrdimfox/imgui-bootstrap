@@ -1,0 +1,24 @@
+name: Test build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Configure CMake
+      run: cmake -D CONFIGURE=YES -P build_all.cmake
+
+    - name: Build
+      # Build your program with the given configuration
+      run: cmake -D BUILD=YES -P build_all.cmake
