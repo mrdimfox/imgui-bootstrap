@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Setup deps
-      run: sudo apt update && sudo apt install libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev pkg-config
+      run: sudo apt update && sudo apt install ninja-build libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev pkg-config
 
     - name: Configure CMake
       run: cmake -D CONFIGURE=YES -P build_all.cmake
