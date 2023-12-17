@@ -34,6 +34,15 @@
                     "ignoreFailures": true
                 }
             ]
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "(lldb) Launch",
+            "program": "${workspaceFolder}/build/dear_imgui",
+            "envFile": "${workspaceFolder}/linux.env",
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": false
         }
     ]
 }
